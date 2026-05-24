@@ -15,7 +15,6 @@ from filelock import FileLock
 import shutil
 import pickle
 from transformers import ASTModel, ASTConfig, ASTFeatureExtractor
-from audiomentations import Compose
 
 from diffusion_policy.codecs.imagecodecs_numcodecs import register_codecs
 from diffusion_policy.common.normalize_util import (

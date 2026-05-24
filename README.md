@@ -89,8 +89,9 @@ CUDA_VISIBLE_DEVICES=<GPU-device-ids> HYDRA_FULL_ERROR=1 accelerate launch --mul
 ```
 
 Single-GPU training example:
-```console
-python train.py --config-name train_diffusion_unet_maniwav_workspace task.dataset_path=data/replay_buffer.zarr.zip training.num_epochs=60 dataloader.batch_size=64 val_dataloader.batch_size=64 training.device=<GPU-device-id>
+```sh
+# python train.py --config-name train_diffusion_unet_maniwav_workspace task.dataset_path=data/replay_buffer.zarr.zip training.num_epochs=60 dataloader.batch_size=64 val_dataloader.batch_size=64 training.device=<GPU-device-id>
+WANDB_MODE=online uv run --extra cu128 train.py --config-name=train_diffusion_unet_maniwav_workspace task.dataset_path=data/bagel_in_wild/replay_buffer.zarr.zip training.num_epochs=60 dataloader.batch_size=64 val_dataloader.batch_size=64
 ```
 
 ## Real World Evaluation
